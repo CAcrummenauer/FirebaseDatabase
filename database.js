@@ -16,3 +16,8 @@ dbList.on('child_added', snap => {
     li.id = snap.key;
     list.appendChild(li);
 });
+
+dbList.on('child_changed', snap => {
+    const liChanged = document.getElementById(snap.key);
+    liChanged.innerText = snap.val();
+});
