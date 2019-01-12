@@ -21,3 +21,8 @@ dbList.on('child_changed', snap => {
     const liChanged = document.getElementById(snap.key);
     liChanged.innerText = snap.val();
 });
+
+dbList.on('child_removed', snap => {
+    const liRemoved = document.getElementById(snap.key);
+    liRemoved.remove();
+});
